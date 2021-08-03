@@ -4,6 +4,7 @@ import Form from "./Form";
 import "./styles.css"
 
 
+
 function Index() {
     const [contacts, setContacts] = useState([
         {
@@ -27,6 +28,7 @@ console.log(contacts)
     },[contacts])
     return (
         <div id="container">
+            <h1 className="text-secondary">Contacts</h1>
             <List contacts={contacts}/>
             <Form contacts={contacts} setContacts = {setContacts}/>
         </div>

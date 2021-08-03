@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import {Button,FormControl} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function List({contacts}) {
     const [filterText, setFilterText] = useState("");
@@ -11,12 +13,15 @@ function List({contacts}) {
     console.log("filtered", filtered)
     return (
         <div>
-            <input type="text" value = {filterText} onChange={(e)=> { setFilterText(e.target.value)}} placeholder="Filter Contact"/>
-         <ul>
+            <FormControl type="text" value = {filterText} onChange={(e)=> { setFilterText(e.target.value)}} placeholder="Filter Contact"/>
+         <ul className="list">
              {
-                 filtered.map((contact,index)=> <li key={index}>{contact.fullname} </li>)
+                 filtered.map((contact,index)=> <li className="btn btn-primary"  key={index}><span> {contact.fullname}
+                     </span><span> {contact.phoneNumber}
+                     </span> </li>)
              }
          </ul>
+         <p className="text-success h4" >Registered User : ({filtered.length}) </p>
         </div>
     )
 }
