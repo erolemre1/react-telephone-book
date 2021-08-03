@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState } from "react"
+import { useState } from "react";
+
 
 const initialformvalues ={ fullname : "", phoneNumber : "" }
 function Form({setContacts,contacts}) {
@@ -16,7 +17,7 @@ function Form({setContacts,contacts}) {
             setForm(initialformvalues)
     }
     return (
-        <form >
+        <form className="forms" >
             <div>
                 <div>
                     <input

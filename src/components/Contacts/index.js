@@ -1,22 +1,22 @@
 import {useState, useEffect} from 'react';
 import List from "./List";
 import Form from "./Form";
-
+import "./styles.css"
 
 
 function Index() {
     const [contacts, setContacts] = useState([
         {
             fullname:"Emre",
-            phoneNumber : "12345"
+            phoneNumber : "111"
         },
         {
             fullname:"Erol",
-            phoneNumber : "34564"
+            phoneNumber : "222"
         },
         {
             fullname:"Güleç",
-            phoneNumber : "12334564345"
+            phoneNumber : "333"
         },
     ]);
   
@@ -26,7 +26,7 @@ console.log(contacts)
 
     },[contacts])
     return (
-        <div>
+        <div id="container">
             <List contacts={contacts}/>
             <Form contacts={contacts} setContacts = {setContacts}/>
         </div>
